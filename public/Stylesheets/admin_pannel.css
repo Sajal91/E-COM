@@ -1,0 +1,33 @@
+.display-boxes {
+    width: 15rem;
+    height: 11rem;
+    border: black solid 5px;
+}
+
+#display-pannel {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+}
+
+#products-display-pannel {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#products-display-pannel table tr td {
+    width: 20rem;
+    border: solid black 1px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+#products-display-pannel table tr th {
+    background-color: bisque;
+    padding: 2rem;
+}
