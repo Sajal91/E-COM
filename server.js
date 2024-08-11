@@ -37,12 +37,6 @@ app.get('/home', async(request,response)=>{
     response.json([products,users,orders,reviews]);
 })
 
-// const product1 = new Product({
-//     name: "pencil",
-//     description: "great pencil",
-//     price: 10,
-// })
-
 app.get('/product',(request,response)=>{
     // product1.save()
     // .then((result)=>{
