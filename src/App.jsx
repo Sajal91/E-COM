@@ -3,13 +3,12 @@ import viteLogo from '/vite.svg'
 import React, { useEffect, useState } from 'react';
 
 function App() {
-  const [products, useData] = useState([{}]);
+  const [data, useData] = useState([[{}], [{}], [{}], [{}]]);
   useEffect(() => {
     fetch("http://localhost:8080/home")
       .then(response => response.json())
-      .then((products) => {
-        useData(products)
-        console.log(products)
+      .then((data) => {
+        useData(data)
       })
   }, []);
 
@@ -17,10 +16,10 @@ function App() {
     <>
       <div>
         <div className="flex justify-center h-52 w-full mt-5">
-          <div className="h-44 w-44 border-4 border-black">products {products[0].name}</div>
-          <div className="h-44 w-44 border-4 border-black">orders </div>
-          <div className="h-44 w-44 border-4 border-black">users </div>
-          <div className="h-44 w-44 border-4 border-black">products</div>
+          <div className="h-44 w-44 border-4 border-black">products {data[0].length}</div> {/* 0=>products */}
+          <div className="h-44 w-44 border-4 border-black">users {data[1].length}</div> {/* 1=>users */}
+          <div className="h-44 w-44 border-4 border-black">orders {data[2].length}</div> {/* 2=>orders */}
+          <div className="h-44 w-44 border-4 border-black">reviews {data[3].length}</div> {/* 3=>reviews */}
         </div>
         <h1 style={{ textAlign: "center" }} className='mt-5'>Product Details</h1>
         <div id="products-display-pannel" className='flex justify-center mt-5'>
@@ -32,9 +31,9 @@ function App() {
               <th>Price</th>
               <th>Reviews</th>
             </tr>
-
+            
             <tr>
-              <td className='px-28'>1</td>
+              <td className='px-28'>{/*data[0][0].name*/}</td>
               <td className='px-28'>
                 <img width="100rem" height="100rem" src="" alt="" />
 

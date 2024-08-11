@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express');
 const app = express();
 const port = 8080;
@@ -20,7 +21,7 @@ app.use(express.static('public'));
 main().catch(err => console.log(err));
 
 async function main() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/ecom');
+  await mongoose.connect(process.env.MONGO_URL);
 }
 
 app.listen(port, ()=>{
@@ -31,8 +32,9 @@ app.get('/home', async(request,response)=>{
     let products = await Product.find();
     let users = await User.find();
     let orders = await Order.find();
+    let reviews = await Review.find();
     console.log(products);
-    response.json(products);
+    response.json([products,users,orders,reviews]);
 })
 
 // const product1 = new Product({
