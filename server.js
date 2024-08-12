@@ -33,7 +33,6 @@ app.get('/home', async(request,response)=>{
     let users = await User.find();
     let orders = await Order.find();
     let reviews = await Review.find();
-    console.log(products);
     response.json([products,users,orders,reviews]);
 })
 
