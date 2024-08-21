@@ -25,23 +25,28 @@ function App() {
         <div id="products-display-pannel" className='flex justify-center mt-5'>
           {/* <a href="http://localhost:8080/new-product/">Add Product</a> */}
           <table className='bg-red-200'>
-            <tr >
-              <th>S no.</th>
-              <th>Title</th>
-              <th>Price</th>
-              <th>Reviews</th>
-            </tr>
-            
-            <tr>
-              <td className='px-28'>{/*data[0][0].name*/}</td>
-              <td className='px-28'>
-                <img width="100rem" height="100rem" src="" alt="" />
-
-              </td>
-              <td className='px-28'>100</td>
-              <td className='px-28'>4.5</td>
-            </tr>
-
+              <tr>
+                <th>S no.</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Reviews</th>
+              </tr>
+              {
+                // ()=>{
+                  data[0].map((element)=>{
+                    return (
+                      <tr>
+                          <td className='px-28'>{element.name}</td>
+                          <td className='px-28'>
+                              <img width="100rem" height="100rem" src="" alt="" />
+                          </td>
+                          <td className='px-28'>100</td>
+                          <td className='px-28'>4.5</td>
+                      </tr>
+                    )
+                  })
+                // }
+              }
           </table>
         </div>
       </div>
