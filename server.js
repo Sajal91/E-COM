@@ -6,7 +6,6 @@ const cors = require('cors');
 app.use(cors());
 const path = require('path');
 const mongoose = require('mongoose');
-// const ejsMate = require('ejs-mate');
 const User = require('./Models/user.js');
 const Product = require('./Models/product.js');
 const Order = require('./Models/order.js');
